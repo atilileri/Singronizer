@@ -1,27 +1,32 @@
-import platforms
-import pprint
-import os
+"""test spotify API."""
 
-print('##START') # todo - remove after debug
+# todo - this only gets track info, extend in the future
+
+import platforms.spotify_handler
+
+print('##START')  # todo - remove after debug
 
 if __name__ == '__main__':
 
     print("Hello")
     print()
-    
-    sh = platforms.SpotifyHandler.SpotifyHandler()
-    print('Getting Playlists...')
-    playlist_ids = sh.get_user_playlist_ids()
 
-    assert(playlist_ids)
-    
+    sh = platforms.spotify_handler.SpotifyHandler()
+    print('Getting Playlists...')
+    playlist_ids, playlist_names = sh.get_user_playlist_ids()
+
+    assert playlist_ids
+
+    playlist_ids = [playlist_ids[playlist_names.index('Yorgun')]] # todo - remove after debug
+
+    for i, (p_id, name) in enumerate(zip(playlist_ids, playlist_names)):
+        print(f"   {i+1:2d} {name:40s} {p_id}")
+
     print('Listing Tracks...')
     for pl_id in playlist_ids:
         tracks = sh.get_tracks(playlist_id=pl_id)
-        tracks = tracks[0:6] # todo - remove after debug
-        # pprint.pprint(tracks[0])
+        assert tracks
+        tracks = tracks[0:6]  # todo - remove after debug
 
         for i, tr in enumerate(tracks):
-            print(
-                "   %d %32.32s %s" %
-                (i+1, tr['artists'][0]['name'], tr['name']))
+            print(f"   {i+1} {tr['artists'][0]['name']:32.32s} {tr['name']}")
