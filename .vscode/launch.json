@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Test Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Test Spotipy API",
+            "type": "debugpy",
+            "request": "launch",
+            // "program": "${file}",
+            "program": "${workspaceFolder}/tst_spot_api.py",
+            "console": "integratedTerminal"
+        }
+    ]
+}
