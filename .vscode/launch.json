@@ -31,6 +31,13 @@
             "request": "launch",
             "program": "${workspaceFolder}/tst_end_2_end.py",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Test Property Compare",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tst_prop_compare.py",
+            "console": "integratedTerminal"
         }
     ]
 }
