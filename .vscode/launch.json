@@ -17,6 +17,13 @@
             "request": "launch",
             "program": "${workspaceFolder}/tst_spot_api.py",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Test Youtube Music Public API",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/tst_ytm_pub_api.py",
+            "console": "integratedTerminal"
         }
     ]
 }
