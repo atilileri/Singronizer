@@ -3,5 +3,27 @@
 {% extends "base.html" %}
 
 {% block top_content %}
-    <h1>Top Bar Here!!</h1>
+<h1>Top Bar Here!!</h1>
 {% endblock top_content %}
+
+{% block spot_content %}
+<h1>Spotify Here!!</h1>
+<button onclick="loadYTM()">
+    Go to YTM
+</button>
+{% endblock spot_content %}
+
+{% block ytm_content %}
+<h1>youtube music Here!!</h1>
+<div id="message"></div>
+{% endblock ytm_content %}
+
+{% block js_content %}
+<script type="text/javascript">
+    let message = document.getElementById("message");
+    function loadYTM() {
+       message.innerHTML = "YTM matches"
+    }
+</script>
+{% endblock js_content %}
+
